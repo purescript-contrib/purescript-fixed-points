@@ -1,0 +1,21 @@
+{
+  "name": "purescript-fixed-points",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "authors": [
+    "Jon Sterling <jon@jonmsterling.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-console": "^0.1.0",
+    "purescript-exists": "^0.2.0"
+  }
+}

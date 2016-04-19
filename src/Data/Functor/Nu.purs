@@ -5,7 +5,7 @@ module Data.Functor.Nu
   ) where
 
 import Prelude
-import Data.Exists
+import Data.Exists (Exists, mkExists, runExists)
 
 type Store s a =
   { pos :: s

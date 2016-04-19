@@ -1,5 +1,5 @@
 module Data.Functor.Mu
-  ( Mu()
+  ( Mu
   , roll
   , unroll
   ) where
@@ -7,8 +7,8 @@ module Data.Functor.Mu
 import Prelude
 import Data.TacitString as TS
 
-import Data.Eq1
-import Data.Ord1
+import Data.Eq1 (class Eq1, eq1)
+import Data.Ord1 (class Ord1, compare1)
 
 -- | `Mu f` is the least fixed point of a functor `f`, when it exists.
 data Mu f = In (f (Mu f))

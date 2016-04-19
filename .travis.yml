@@ -1,0 +1,19 @@
+language: node_js
+dist: trusty
+sudo: required
+node_js:
+  - 5
+install:
+  - npm install pulp bower -g
+  - npm install && bower install
+script:
+  - pulp test
+
+after_success:
+  - >-
+    test $TRAVIS_TAG &&
+    psc-publish > .pursuit.json &&
+    curl -X POST http://pursuit.purescript.org/packages \
+      -d @.pursuit.json \
+      -H 'Accept: application/json' \
+      -H "Authorization: token ${GITHUB_TOKEN}"

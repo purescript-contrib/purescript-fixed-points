@@ -13,6 +13,19 @@ import Data.Ord1 (class Ord1, compare1)
 -- | `Mu f` is the least fixed point of a functor `f`, when it exists.
 data Mu f = In (f (Mu f))
 
+-- | Rewrites a tree along a natural transformation.
+transMu
+  ∷ ∀ f g
+  . (Functor g)
+  ⇒ (∀ a. f a → g a)
+  → Mu f
+  → Mu g
+transMu η =
+  roll
+    <<< map (transMu η)
+    <<< η
+    <<< unroll
+
 roll :: forall f. f (Mu f) -> Mu f
 roll = In
 

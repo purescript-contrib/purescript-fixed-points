@@ -1,21 +1,24 @@
 {
   "name": "purescript-fixed-points",
-  "version": "0.2.0",
   "license": "Apache-2.0",
   "authors": [
     "Jon Sterling <jon@jonmsterling.com>"
   ],
-  "moduleType": [
-    "node"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/slamdata/purescript-fixed-points.git"
+  },
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
-    "output"
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
   ],
   "dependencies": {
-    "purescript-console": "^0.1.0",
-    "purescript-exists": "^0.2.0"
+    "purescript-exists": "^1.0.0",
+    "purescript-prelude": "^1.0.0"
   }
 }

@@ -1,5 +1,5 @@
 module Data.Functor.Nu
-  ( Nu()
+  ( Nu
   , unfold
   , observe
   ) where

@@ -1,5 +1,5 @@
 module Data.TacitString
-  ( TacitString()
+  ( TacitString
   , hush
   ) where
 

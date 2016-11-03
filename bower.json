@@ -18,7 +18,8 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-exists": "^1.0.0",
-    "purescript-prelude": "^1.0.0"
+    "purescript-exists": "^2.0.0",
+    "purescript-prelude": "^2.1.0",
+    "purescript-newtype": "^1.1.0"
   }
 }

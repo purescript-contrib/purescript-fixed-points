@@ -1,5 +1,5 @@
 module Data.Functor.Mu
-  ( Mu
+  ( Mu(..)
   , roll
   , unroll
   ) where
@@ -8,10 +8,11 @@ import Prelude
 import Data.TacitString as TS
 
 import Data.Eq1 (class Eq1, eq1)
+import Data.Newtype (class Newtype)
 import Data.Ord1 (class Ord1, compare1)
 
 -- | `Mu f` is the least fixed point of a functor `f`, when it exists.
-data Mu f = In (f (Mu f))
+newtype Mu f = In (f (Mu f))
 
 -- | Rewrites a tree along a natural transformation.
 transMu
@@ -32,8 +33,10 @@ roll = In
 unroll :: forall f. Mu f -> f (Mu f)
 unroll (In x) = x
 
+derive instance newtypeMu :: Newtype (Mu f) _
+
 -- | To implement `Eq`, we require `f` to have higher-kinded equality.
-instance eqMu :: (Eq1 f) => Eq (Mu f) where
+instance eqMu :: Eq1 f => Eq (Mu f) where
   eq (In x) (In y) = eq1 x y
 
 -- | To implement `Ord`, we require `f` to have higher-kinded comparison.
@@ -45,4 +48,3 @@ instance ordMu :: (Eq1 f, Ord1 f) => Ord (Mu f) where
 -- extra quotes from appearing.
 instance showMu :: (Show (f TS.TacitString), Functor f) => Show (Mu f) where
   show (In x) = show $ x <#> (show >>> TS.hush)
-

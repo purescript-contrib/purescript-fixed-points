@@ -7,9 +7,9 @@ module Data.Functor.Mu
 import Prelude
 import Data.TacitString as TS
 
-import Data.Eq1 (class Eq1, eq1)
+import Data.Eq (class Eq1, eq1)
 import Data.Newtype (class Newtype)
-import Data.Ord1 (class Ord1, compare1)
+import Data.Ord (class Ord1, compare1)
 
 -- | `Mu f` is the least fixed point of a functor `f`, when it exists.
 newtype Mu f = In (f (Mu f))

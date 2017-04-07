@@ -2,6 +2,7 @@ module Data.Functor.Mu
   ( Mu(..)
   , roll
   , unroll
+  , transMu
   ) where
 
 import Prelude

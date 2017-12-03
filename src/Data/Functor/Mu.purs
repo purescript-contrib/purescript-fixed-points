@@ -7,11 +7,13 @@ module Data.Functor.Mu
   ) where
 
 import Prelude
-import Data.TacitString as TS
 
+import Data.Either (Either, either)
 import Data.Eq (class Eq1, eq1)
 import Data.Newtype (class Newtype)
 import Data.Ord (class Ord1, compare1)
+import Data.TacitString as TS
+import Data.Tuple (Tuple(..))
 
 -- | `Mu f` is the least fixed point of a functor `f`, when it exists.
 newtype Mu f = In (f (Mu f))
@@ -57,3 +59,36 @@ cata f =
   f
   <<< map (cata f)
   <<< unroll
+
+-- | anamorphism
+ana :: forall f a. Functor f => (a -> f a) -> a -> Mu f
+ana f = In <<< map (ana f) <<< f
+
+
+type RAlgebra f a = f (Tuple (Mu f) a) -> a
+
+-- | paramorphism
+para :: forall f a. Functor f => RAlgebra f a -> Mu f -> a
+para rAlg = unroll >>> map fanout >>> rAlg
+    where fanout :: Mu f -> Tuple (Mu f) a
+          fanout t = Tuple t (para rAlg t)
+
+
+type RCoalgebra f a = a -> f (Either (Mu f) a)
+
+-- | apomorphism
+apo :: forall f a. Functor f => RCoalgebra f a -> a -> Mu f
+apo f = In <<< map fanin <<< f
+   where fanin = either id (apo f)
+
+type CVAlgebra f a = f (Attr f a) -> a
+
+data Attr f a = Attr
+              { attribute :: a
+              , hole      :: f (Attr f a)
+              }
+
+-- | histo
+histo :: forall f a. Functor f => CVAlgebra f a -> Mu f -> a
+histo h = unroll >>> map worker >>> h where
+    worker t = Attr {attribute : (histo h t), hole: (map worker (unroll t))}

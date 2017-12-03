@@ -4,6 +4,10 @@ module Data.Functor.Mu
   , unroll
   , transMu
   , cata
+  , ana
+  , para
+  , apo
+  , histo
   ) where
 
 import Prelude

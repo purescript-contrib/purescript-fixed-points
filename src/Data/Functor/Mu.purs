@@ -3,6 +3,7 @@ module Data.Functor.Mu
   , roll
   , unroll
   , transMu
+  , cata
   ) where
 
 import Prelude

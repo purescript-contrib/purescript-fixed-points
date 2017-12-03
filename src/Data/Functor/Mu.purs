@@ -49,3 +49,10 @@ instance ordMu :: (Eq1 f, Ord1 f) => Ord (Mu f) where
 -- extra quotes from appearing.
 instance showMu :: (Show (f TS.TacitString), Functor f) => Show (Mu f) where
   show (In x) = show $ x <#> (show >>> TS.hush)
+
+-- | catamorphism: apply the function for the bottom up
+cata :: forall f a. Functor f => (f a -> a) -> Mu f -> a
+cata f =
+  f
+  <<< map (cata f)
+  <<< unroll

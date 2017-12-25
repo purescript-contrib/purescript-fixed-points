@@ -8,6 +8,7 @@ module Data.Functor.Mu
   , para
   , apo
   , histo
+  , Attr(..)
   ) where
 
 import Prelude

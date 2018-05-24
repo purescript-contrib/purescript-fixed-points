@@ -18,9 +18,9 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-exists": "#compiler/0.12",
-    "purescript-prelude": "#compiler/0.12",
-    "purescript-newtype": "#compiler/0.12",
-    "purescript-transformers": "#compiler/0.12"
+    "purescript-exists": "^4.0.0",
+    "purescript-prelude": "^4.0.0",
+    "purescript-newtype": "^3.0.0",
+    "purescript-transformers": "^4.0.0"
   }
 }

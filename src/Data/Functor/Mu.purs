@@ -19,7 +19,7 @@ newtype Mu f = In (f (Mu f))
 transMu
   ∷ ∀ f g
   . (Functor g)
-  ⇒ (∀ a. f a → g a)
+  ⇒ f ~> g
   → Mu f
   → Mu g
 transMu η =

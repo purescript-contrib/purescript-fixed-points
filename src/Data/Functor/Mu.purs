@@ -6,11 +6,13 @@ module Data.Functor.Mu
   ) where
 
 import Prelude
-import Data.TacitString as TS
 
+import Control.Alt (class Alt, (<|>))
+import Control.Alternative (class Plus, empty)
 import Data.Eq (class Eq1, eq1)
 import Data.Newtype (class Newtype)
 import Data.Ord (class Ord1, compare1)
+import Data.TacitString as TS
 
 -- | `Mu f` is the least fixed point of a functor `f`, when it exists.
 newtype Mu f = In (f (Mu f))
@@ -49,3 +51,9 @@ instance ordMu :: (Eq1 f, Ord1 f) => Ord (Mu f) where
 -- extra quotes from appearing.
 instance showMu :: (Show (f TS.TacitString), Functor f) => Show (Mu f) where
   show (In x) = show $ x <#> (show >>> TS.hush)
+
+instance semigroupMu :: Alt f => Semigroup (Mu f) where
+  append (In x) (In y) = In (x <|> y)
+
+instance monoidMu :: Plus f => Monoid (Mu f) where
+  mempty = In empty

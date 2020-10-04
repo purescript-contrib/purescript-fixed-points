@@ -1,16 +1,40 @@
-# purescript-fixed-points
+# Fixed Points
 
-[![Latest release](http://img.shields.io/github/release/slamdata/purescript-fixed-points.svg)](https://github.com/slamdata/purescript-fixed-points/releases)
-[![Build status](https://travis-ci.org/slamdata/purescript-fixed-points.svg?branch=master)](https://travis-ci.org/slamdata/purescript-fixed-points)
+[![CI](https://github.com/purescript-contrib/purescript-fixed-points/workflows/CI/badge.svg?branch=main)](https://github.com/purescript-contrib/purescript-fixed-points/actions?query=workflow%3ACI+branch%3Amain)
+[![Release](https://img.shields.io/github/release/purescript-contrib/purescript-fixed-points.svg)](https://github.com/purescript-contrib/purescript-fixed-points/releases)
+[![Pursuit](https://pursuit.purescript.org/packages/purescript-fixed-points/badge)](https://pursuit.purescript.org/packages/purescript-fixed-points)
+[![Maintainer: garyb](https://img.shields.io/badge/maintainer-garyb-teal.svg)](https://github.com/garyb)
+[![Maintainer: thomashoneyman](https://img.shields.io/badge/maintainer-thomashoneyman-teal.svg)](https://github.com/thomashoneyman)
 
 Types for the least (`Mu`) and greatest (`Nu`) fixed points of functors.
 
 ## Installation
 
+Install `fixed-points` with [Spago](https://github.com/purescript/spago):
+
+```sh
+spago install fixed-points
 ```
-bower install purescript-fixed-points
-```
+
+## Quick start
+
+The quick start hasn't been written yet (contributions are welcome!). The quick start covers a common, minimal use case for the library.
 
 ## Documentation
 
-Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-fixed-points).
+Module documentation for `fixed-points` [published on Pursuit](https://pursuit.purescript.org/packages/purescript-fixed-points).
+
+If you get stuck, there are several ways to get help:
+
+- [Open an issue](https://github.com/purescript-contrib/purescript-fixed-points/issues) if you have encountered a bug or problem.
+- [Search or start a thread on the PureScript Discourse](https://discourse.purescript.org) if you have general questions. You can also ask questions in the `#purescript` and `#purescript-beginners` channels on the [Functional Programming Slack](https://functionalprogramming.slack.com) ([invite link](https://fpchat-invite.herokuapp.com/)).
+
+## Contributing
+
+You can contribute to `fixed-points` in several ways:
+
+1. If you encounter a problem or have a question, please [open an issue](https://github.com/purescript-contrib/purescript-fixed-points/issues). We'll do our best to work with you to resolve or answer it.
+
+2. If you would like to contribute code, tests, or documentation, please [read the contributor guide](./CONTRIBUTING.md). It's a short, helpful introduction to contributing to this library, including development instructions.
+
+3. If you have written a library, tutorial, guide, or other resource based on this package, please share it on the [PureScript Discourse](https://discourse.purescript.org)! Writing libraries and learning resources are a great way to help this library succeed.

@@ -5,14 +5,16 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes (😱!!!):
-
-- Removed `Newtype` instance for `TacitString`
+- Added support for PureScript 0.14 and dropped support for all previous versions (#17)
+- Removed `Newtype` instance for `TacitString` (#16)
 
 New features:
 
 Bugfixes:
 
 Other improvements:
+- Changed default branch to `main` from `master`
+- Updated to comply with Contributors library guidelines by adding new issue and pull request templates, updating documentation, and migrating to Spago for local development and CI
 
 ## [v5.1.0](https://github.com/purescript-contrib/purescript-fixed-points/releases/tag/v5.1.0) - 2018-06-19
 
@@ -20,13 +22,13 @@ Other improvements:
 
 ## [v5.0.0](https://github.com/purescript-contrib/purescript-fixed-points/releases/tag/v5.0.0) - 2018-05-24
 
-Updated for PureScript 0.12
+- Updated for PureScript 0.12
 
 ## [v4.0.0](https://github.com/purescript-contrib/purescript-fixed-points/releases/tag/v4.0.0) - 2017-04-07
 
 - Updated for PureScript 0.11
-- Export `transMu` from `Data.Functor.Mu`
-- Remove custom `Store` type and use one from `purescript-transformers`
+- Exported `transMu` from `Data.Functor.Mu`
+- Removed custom `Store` type and used the one from `purescript-transformers`
 
 ## [v3.0.0](https://github.com/purescript-contrib/purescript-fixed-points/releases/tag/v3.0.0) - 2017-03-06
 

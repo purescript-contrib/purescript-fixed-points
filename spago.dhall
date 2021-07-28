@@ -1,13 +1,6 @@
 { name = "fixed-points"
 , dependencies =
-  [ "console"
-  , "effect"
-  , "exists"
-  , "newtype"
-  , "prelude"
-  , "psci-support"
-  , "transformers"
-  ]
+  [ "control", "exists", "newtype", "prelude", "transformers", "tuples" ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs" ]
 }

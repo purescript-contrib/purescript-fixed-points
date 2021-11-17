@@ -19,11 +19,11 @@ newtype Mu f = In (f (Mu f))
 
 -- | Rewrites a tree along a natural transformation.
 transMu
-  ∷ ∀ f g
-  . (Functor g)
-  ⇒ f ~> g
-  → Mu f
-  → Mu g
+  :: forall f g
+   . (Functor g)
+  => f ~> g
+  -> Mu f
+  -> Mu g
 transMu η =
   roll
     <<< map (transMu η)

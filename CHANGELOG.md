@@ -11,6 +11,7 @@ New features:
 Bugfixes:
 
 Other improvements:
+- Added `purs-tidy` formatter (#21 by @thomashoneyman)
 
 ## [v6.0.0](https://github.com/purescript-contrib/purescript-fixed-points/releases/tag/v6.0.0) - 2021-02-26
 
